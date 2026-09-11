@@ -1,0 +1,164 @@
+{
+  "shop": {
+    "name": "Toko Bu Sari",
+    "open": [
+      9,
+      17
+    ],
+    "closedMsg": "Toko buka jam 09:00–17:00.",
+    "canSell": true,
+    "stock": [
+      {
+        "id": "seed_turnip",
+        "seasons": [
+          "spring"
+        ]
+      },
+      {
+        "id": "seed_potato",
+        "seasons": [
+          "spring"
+        ]
+      },
+      {
+        "id": "seed_strawberry",
+        "seasons": [
+          "spring"
+        ]
+      },
+      {
+        "id": "seed_tomato",
+        "seasons": [
+          "summer"
+        ]
+      },
+      {
+        "id": "seed_chili",
+        "seasons": [
+          "summer"
+        ]
+      },
+      {
+        "id": "seed_corn",
+        "seasons": [
+          "summer",
+          "autumn"
+        ]
+      },
+      {
+        "id": "seed_pumpkin",
+        "seasons": [
+          "autumn"
+        ]
+      },
+      {
+        "id": "seed_cabbage",
+        "seasons": [
+          "autumn"
+        ]
+      },
+      {
+        "id": "feed"
+      },
+      {
+        "id": "fishing_rod"
+      },
+      {
+        "id": "bait"
+      }
+    ],
+    "kind": "shop"
+  },
+  "smith": {
+    "name": "Pandai Besi",
+    "open": [
+      9,
+      16
+    ],
+    "closedMsg": "Pandai besi buka jam 09:00–16:00.",
+    "canSell": false,
+    "upgrades": [
+      {
+        "level": 1,
+        "name": "Tembaga",
+        "price": 500,
+        "materials": [
+          {
+            "id": "stone",
+            "count": 5
+          }
+        ],
+        "effect": "Hemat 1 energi per ayunan"
+      },
+      {
+        "level": 2,
+        "name": "Besi",
+        "price": 2000,
+        "materials": [
+          {
+            "id": "copper_ore",
+            "count": 5
+          }
+        ],
+        "effect": "Hemat 2 energi per ayunan"
+      }
+    ],
+    "kind": "shop"
+  },
+  "warung": {
+    "kind": "shop",
+    "name": "Warung Kang Dadang",
+    "open": [
+      6,
+      22
+    ],
+    "closedMsg": "Warung buka jam 06:00–22:00.",
+    "canSell": false,
+    "stock": [
+      {
+        "id": "teh_manis"
+      },
+      {
+        "id": "kopi"
+      },
+      {
+        "id": "pisang_goreng"
+      },
+      {
+        "id": "jamu"
+      },
+      {
+        "id": "es_kelapa"
+      },
+      {
+        "id": "nasi_goreng"
+      },
+      {
+        "id": "bakso"
+      },
+      {
+        "id": "soto_ayam"
+      }
+    ]
+  },
+  "klinik": {
+    "kind": "clinic",
+    "name": "Klinik Desa",
+    "open": [
+      8,
+      18
+    ],
+    "closedMsg": "Klinik buka jam 08:00–18:00.",
+    "price": 120,
+    "restHours": 2
+  },
+  "balai": {
+    "kind": "requests",
+    "name": "Balai Desa",
+    "open": [
+      7,
+      20
+    ],
+    "closedMsg": "Balai Desa buka jam 07:00–20:00."
+  }
+}

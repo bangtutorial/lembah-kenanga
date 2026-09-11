@@ -1,0 +1,410 @@
+[
+  {
+    "id": "harun",
+    "name": "Pak Lurah Harun",
+    "sprite": "npc_harun",
+    "portrait": "portrait_npc_harun",
+    "role": "Kepala desa",
+    "likes": [
+      "Kopi",
+      "Labu"
+    ],
+    "dialogs": {
+      "default": [
+        "Selamat datang di Lembah Kenanga, Nak. Kakekmu dulu petani terbaik di sini.|Ladang ini memang sudah lama terbengkalai... tapi tanahnya masih subur.",
+        "Kalau butuh benih, temui Bu Sari di toko. Bilang saja aku yang menyuruh.",
+        "Warga desa senang kalau disapa. Coba kenalan dengan semua orang, ya."
+      ],
+      "winter": [
+        "Dingin sekali musim ini. Jangan lupa pakai baju hangat, Nak."
+      ],
+      "friend": [
+        "Kakekmu pasti senang melihat ladang itu hidup lagi.|Aku sendiri sempat ragu ada yang mau mengurusnya.",
+        "Kalau kamu butuh apa-apa, ketuk saja pintu balai. Jangan sungkan.",
+        "Desa ini kecil, tapi orangnya baik-baik. Kamu sudah membuktikannya."
+      ]
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "balai"
+      },
+      {
+        "h": 10,
+        "at": "plaza"
+      },
+      {
+        "h": 15,
+        "at": "papan"
+      },
+      {
+        "h": 19,
+        "at": "balai"
+      }
+    ],
+    "wants": [
+      "turnip",
+      "potato",
+      "wood",
+      "stone"
+    ]
+  },
+  {
+    "id": "sari",
+    "name": "Bu Sari",
+    "sprite": "npc_sari",
+    "portrait": "portrait_npc_sari",
+    "role": "Pemilik toko kelontong",
+    "likes": [
+      "Stroberi",
+      "Bunga"
+    ],
+    "dialogs": {
+      "default": [
+        "Eh, ada petani baru! Aku Sari, yang jaga toko di desa.|Tokoku buka jam 9 sampai jam 5. Mampir ya!",
+        "Lobak itu paling gampang ditanam di musim semi. Empat hari sudah bisa panen, lho.",
+        "Hari yang cerah, cocok buat menyiram tanaman."
+      ],
+      "autumn": [
+        "Musim gugur begini enaknya bikin sup labu. Kamu tanam labu tidak?"
+      ],
+      "friend": [
+        "Kamu tahu, aku sudah menyiapkan benih terbaik khusus buat kamu.|Jangan bilang siapa-siapa, ya.",
+        "Kalau lagi sepi, mampir saja. Ngobrol juga tidak apa-apa.",
+        "Ibuku dulu bilang, pembeli yang ramah itu rezeki. Ternyata benar."
+      ]
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "toko"
+      },
+      {
+        "h": 9,
+        "at": "toko"
+      },
+      {
+        "h": 17,
+        "at": "plaza"
+      },
+      {
+        "h": 20,
+        "at": "toko"
+      }
+    ],
+    "wants": [
+      "turnip",
+      "tomato",
+      "egg",
+      "wildflower"
+    ]
+  },
+  {
+    "id": "jaka",
+    "name": "Bang Jaka",
+    "sprite": "npc_jaka",
+    "portrait": "portrait_npc_jaka",
+    "role": "Pandai besi",
+    "likes": [
+      "Bijih",
+      "Kopi"
+    ],
+    "dialogs": {
+      "default": [
+        "Cangkul tumpul cuma bikin punggung sakit, Nak.|Bawa bijih ke bengkelku, nanti kubikin alatmu lebih tajam.",
+        "Alat level satu itu cuma buat pemanasan. Kalau sudah niat bertani, tingkatkan.",
+        "Dengar bunyi palu itu? Itu suara desa yang masih hidup."
+      ],
+      "summer": [
+        "Panas di depan tungku waktu musim panas itu... yah, begitulah pekerjaan."
+      ],
+      "friend": [
+        "Alatmu kurawat sendiri kalau kamu yang bawa. Yang lain antre.",
+        "Dulu aku pikir anak kota tidak tahan di sini. Aku salah.",
+        "Kalau palu ini sudah tidak kuat kuangkat, mungkin kamu yang lanjutkan."
+      ]
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "bengkel"
+      },
+      {
+        "h": 9,
+        "at": "bengkel"
+      },
+      {
+        "h": 16,
+        "at": "warung"
+      },
+      {
+        "h": 20,
+        "at": "bengkel"
+      }
+    ],
+    "wants": [
+      "stone",
+      "copper_ore",
+      "iron_ore",
+      "coal",
+      "wood"
+    ]
+  },
+  {
+    "id": "dadang",
+    "name": "Kang Dadang",
+    "sprite": "npc_dadang",
+    "portrait": "portrait_npc_dadang",
+    "role": "Pemilik warung",
+    "likes": [
+      "Telur",
+      "Cabai"
+    ],
+    "dialogs": {
+      "default": [
+        "Kopi, Nak? Segelas bikin tenagamu balik lagi.|Warungku buka dari pagi buta sampai malam.",
+        "Kalau energimu habis di ladang, jangan dipaksa. Mampir sini dulu.",
+        "Bahan masakanku dari kebun warga sini semua. Kalau panenmu bagus, aku beli."
+      ],
+      "winter": [
+        "Musim dingin begini wedang jahe laku keras. Mau satu?"
+      ],
+      "friend": [
+        "Kopimu sudah kusiapkan sebelum kamu datang. Sudah hafal.",
+        "Warung ini ramai kalau kamu mampir. Entah kenapa.",
+        "Nanti kubikinkan resep baru, kamu yang pertama coba."
+      ]
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "warung"
+      },
+      {
+        "h": 11,
+        "at": "warung"
+      },
+      {
+        "h": 18,
+        "at": "plaza"
+      },
+      {
+        "h": 21,
+        "at": "warung"
+      }
+    ],
+    "wants": [
+      "tomato",
+      "chili",
+      "egg",
+      "milk",
+      "mushroom"
+    ]
+  },
+  {
+    "id": "ratna",
+    "name": "Dokter Ratna",
+    "sprite": "npc_ratna",
+    "portrait": "portrait_npc_ratna",
+    "role": "Klinik desa",
+    "likes": [
+      "Jamu",
+      "Bunga liar"
+    ],
+    "dialogs": {
+      "default": [
+        "Klinik buka setiap hari, Nak. Kalau tenagamu habis, jangan dipaksa pulang jalan kaki.|Datang saja, nanti kuurus.",
+        "Yang paling sering kuobati di sini? Punggung. Semua petani sama saja.",
+        "Makan yang cukup sebelum ke ladang. Itu obat termurah yang kupunya."
+      ],
+      "winter": [
+        "Musim dingin banyak yang batuk. Jangan tidur larut, ya."
+      ],
+      "friend": [
+        "Tanganmu makin kasar, tapi wajahmu makin sehat. Bagus itu.",
+        "Aku senang ada yang mau mendengarkan kalau aku cerita soal pasien.",
+        "Jangan sungkan datang walau tidak sakit. Sesekali aku juga bosan sendiri."
+      ]
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "klinik"
+      },
+      {
+        "h": 9,
+        "at": "klinik"
+      },
+      {
+        "h": 17,
+        "at": "plaza"
+      },
+      {
+        "h": 20,
+        "at": "klinik"
+      }
+    ],
+    "wants": [
+      "mushroom",
+      "wildflower",
+      "berry",
+      "honeycomb"
+    ]
+  },
+  {
+    "id": "wulan",
+    "name": "Nenek Wulan",
+    "sprite": "npc_wulan",
+    "portrait": "portrait_npc_wulan",
+    "role": "Nelayan tua",
+    "likes": [
+      "Kerang",
+      "Rumput laut"
+    ],
+    "dialogs": {
+      "default": [
+        "Sudah lima puluh tahun nenek memancing di teluk ini.|Lautnya masih sama, cuma nenek yang makin pelan.",
+        "Umpan yang bagus itu bukan yang mahal, tapi yang sabar menunggunya.",
+        "Kalau air surut, coba jalan di pasir. Banyak kerang tertinggal di situ."
+      ],
+      "autumn": [
+        "Angin gugur bikin ikan turun ke dalam. Sabar sedikit ya kalau memancing."
+      ],
+      "friend": [
+        "Duduk sini, Nak. Nenek ceritakan waktu teluk ini masih penuh perahu.",
+        "Kalau nenek sudah tidak kuat melaut, kamu yang jaga pantai ini, ya.",
+        "Kamu ini sabar. Sabar itu modal terbesar orang memancing."
+      ]
+    },
+    "gift": {
+      "item": "fishing_rod",
+      "text": "Eh, tanganmu kosong. Belum punya pancing, ya?|Ambil punya nenek yang lama ini. Tanganku sudah tidak sekuat dulu, biar kamu yang pakai.|Umpannya beli di toko Bu Sari. Berdiri di tepi air, tekan E, lalu sabar sedikit."
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "pantai"
+      },
+      {
+        "h": 10,
+        "at": "dermaga"
+      },
+      {
+        "h": 16,
+        "at": "pantai"
+      },
+      {
+        "h": 20,
+        "at": "pantai"
+      }
+    ],
+    "wants": [
+      "fish_tilapia",
+      "fish_snapper",
+      "seaweed",
+      "seashell"
+    ]
+  },
+  {
+    "id": "rani",
+    "name": "Rani",
+    "sprite": "npc_rani",
+    "portrait": "portrait_npc_rani",
+    "role": "Pembudidaya bunga",
+    "likes": [
+      "Bunga liar",
+      "Madu"
+    ],
+    "dialogs": {
+      "default": [
+        "Oh, kamu cucunya Pak Tani yang dulu itu ya?|Pondokku di tepi hutan. Mampir kalau lewat, banyak bunga sedang mekar.",
+        "Bunga liar di hutan ini lebih kuat daripada yang kutanam sendiri. Lucu, ya.",
+        "Kalau kamu menemukan bunga yang belum pernah kulihat, tolong bawakan padaku."
+      ],
+      "spring": [
+        "Musim semi paling sibuk buatku. Seluruh hutan berbunga sekaligus."
+      ],
+      "friend": [
+        "Aku menyimpan bibit yang paling bagus untukmu. Tumbuhnya lama, tapi sepadan.",
+        "Hutan ini terasa kurang ramai kalau kamu tidak lewat.",
+        "Kalau kamu berdiri diam di sini sebentar, kupu-kupunya mau mendekat."
+      ]
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "hutan"
+      },
+      {
+        "h": 9,
+        "at": "kolam"
+      },
+      {
+        "h": 15,
+        "at": "hutan"
+      },
+      {
+        "h": 19,
+        "at": "hutan"
+      }
+    ],
+    "wants": [
+      "berry",
+      "wildflower",
+      "honeycomb",
+      "nest",
+      "mushroom"
+    ]
+  },
+  {
+    "id": "bayu",
+    "name": "Bayu",
+    "sprite": "npc_bayu",
+    "portrait": "portrait_npc_bayu",
+    "role": "Nelayan muda",
+    "likes": [
+      "Ikan kakap",
+      "Kopi"
+    ],
+    "dialogs": {
+      "default": [
+        "Pagi! Aku Bayu, biasanya di dermaga.|Kalau mau belajar memancing, berdiri saja di sebelahku.",
+        "Nenek Wulan yang mengajariku. Katanya laut tidak suka orang buru-buru.",
+        "Ikan besar itu di air dalam, di ujung dermaga. Yang di tepi kecil-kecil saja."
+      ],
+      "summer": [
+        "Panas begini ikan naik ke permukaan. Coba pancing sore-sore."
+      ],
+      "friend": [
+        "Nanti kalau libur, kita mancing bareng sampai sore. Mau?",
+        "Kamu satu-satunya yang tahan berdiri di dermaga selama aku.",
+        "Nenek Wulan bilang kamu murid yang lebih sabar daripada aku dulu."
+      ]
+    },
+    "schedule": [
+      {
+        "h": 6,
+        "at": "dermaga"
+      },
+      {
+        "h": 11,
+        "at": "dermaga"
+      },
+      {
+        "h": 17,
+        "at": "warung"
+      },
+      {
+        "h": 21,
+        "at": "pantai"
+      }
+    ],
+    "wants": [
+      "fish_catfish",
+      "fish_gourami",
+      "fish_tuna",
+      "squid",
+      "driftwood"
+    ]
+  }
+]

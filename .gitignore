@@ -1,0 +1,41 @@
+# Konfigurasi editor / perkakas
+.claude/
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (kalau nanti dipakai)
+node_modules/
+
+# Keluaran sementara pipeline aset
+assets/_tmp/
+assets/_work/
+*.log
+
+# Berkas mentah hasil generate — ratusan MB dan tidak dibutuhkan game.
+# Yang dipakai adalah hasil olahannya di assets/sprites/.
+assets/_raw/
+
+# Basis data obrolan dan akun — dibuat sendiri saat server dijalankan.
+# Berisi username dan sidik kunci sesi pemain sungguhan; jangan pernah dikomit.
+var/
+
+# Lembar periksa sementara saat meninjau aset — bukan bagian game
+assets/sprites/**/_*_check.png
+assets/sprites/**/preview_*.png
+
+# Keluaran tools/publish.py — disusun ulang tiap kali, bukan sumber
+dist/
+dist.zip
+
+# Simpanan lokal pemain
+*.save.json

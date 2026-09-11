@@ -1,0 +1,62 @@
+[
+  {
+    "id": "tilapia",
+    "item": "fish_tilapia",
+    "water": "pond",
+    "seasons": ["spring", "summer", "autumn"],
+    "difficulty": 1,
+    "weight": 10
+  },
+  {
+    "id": "gourami",
+    "item": "fish_gourami",
+    "water": "pond",
+    "difficulty": 3,
+    "weight": 5
+  },
+  {
+    "id": "catfish",
+    "item": "fish_catfish",
+    "water": "pond",
+    "hours": [18, 26],
+    "difficulty": 4,
+    "weight": 3
+  },
+  {
+    "id": "snapper",
+    "item": "fish_snapper",
+    "water": "sea",
+    "difficulty": 3,
+    "weight": 8
+  },
+  {
+    "id": "squid",
+    "item": "squid",
+    "water": "sea",
+    "hours": [18, 26],
+    "difficulty": 4,
+    "weight": 4
+  },
+  {
+    "id": "tuna",
+    "item": "fish_tuna",
+    "water": "sea",
+    "seasons": ["summer", "autumn"],
+    "difficulty": 5,
+    "weight": 2
+  },
+  {
+    "id": "seaweed",
+    "item": "seaweed",
+    "water": "sea",
+    "difficulty": 1,
+    "weight": 6
+  },
+  {
+    "id": "junk_boot",
+    "item": "junk_boot",
+    "water": "any",
+    "difficulty": 1,
+    "weight": 4
+  }
+]

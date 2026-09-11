@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lembah Kenanga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --wood: #8b5a2b; --wood-light: #c8843a; --wood-dark: #5a3418; --outline: #3a2a2a;
+      --cream: #f5e6c8; --cream-dark: #d9c39a; --grass: #6abe30; --red: #b8432e; --green: #4f9a29;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: "VT323", monospace; font-size: 22px; color: var(--outline);
+      background: url("assets/sprites/terrain/grass_spring.png") repeat; background-size: 64px 64px;
+      image-rendering: pixelated;
+    }
+    h1, h2, h3, .pixel { font-family: "Press Start 2P", monospace; }
+    img { image-rendering: pixelated; }
+
+    header { position: sticky; top: 0; z-index: 5; background: var(--wood); border-bottom: 4px solid var(--outline); box-shadow: 0 4px 0 var(--wood-dark); }
+    nav { max-width: 1100px; margin: 0 auto; display: flex; gap: 6px; padding: 10px 16px; align-items: center; flex-wrap: wrap; }
+    nav .brand { color: var(--cream); font-size: 12px; margin-right: auto; text-decoration: none; }
+    nav a.tab { color: var(--cream); text-decoration: none; padding: 8px 14px; border: 3px solid var(--outline); background: var(--wood-light); box-shadow: 0 3px 0 var(--wood-dark); font-size: 20px; }
+    nav a.tab:hover, nav a.tab.active { background: var(--cream); color: var(--outline); transform: translateY(1px); box-shadow: 0 2px 0 var(--wood-dark); }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 18px 16px 64px; }
+    section { display: none; }
+    section.active { display: block; }
+
+    .panel { background: var(--cream); border: 4px solid var(--outline); box-shadow: 0 0 0 4px var(--wood-light), 0 0 0 8px var(--outline), 0 8px 0 8px var(--wood-dark); padding: 20px 24px; margin-bottom: 32px; }
+    .panel h2 { font-size: 16px; margin: 0 0 6px; color: var(--red); }
+    .panel .rule { display: block; width: 100%; max-width: 420px; margin: 0 0 16px; image-rendering: pixelated; }
+    .panel p { margin: 0 0 12px; line-height: 1.3; }
+
+    /* hero */
+    /* Banner: short enough that the start form is visible without scrolling. */
+    .hero { position: relative; height: clamp(150px, 26vh, 260px); border: 4px solid var(--outline); overflow: hidden;
+      margin-bottom: 28px; box-shadow: 0 8px 0 var(--wood-dark);
+      background: #7fc4f0 url("assets/homepage/hero.png") center 62% / cover no-repeat; }
+    .hero .title { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .hero .logo { width: min(46%, 430px); filter: drop-shadow(0 5px 0 rgba(0,0,0,.4)); }
+
+    .btn { display: inline-block; font-family: "Press Start 2P", monospace; font-size: 14px; padding: 14px 22px; background: var(--red); color: var(--cream); border: 4px solid var(--outline); box-shadow: 0 5px 0 #6b1f12; text-decoration: none; cursor: pointer; }
+    .btn:hover { transform: translateY(2px); box-shadow: 0 3px 0 #6b1f12; }
+    .btn.secondary { background: var(--green); box-shadow: 0 5px 0 #2f5f18; }
+    .btn.secondary:hover { box-shadow: 0 3px 0 #2f5f18; }
+    .btn[disabled] { opacity: .45; pointer-events: none; }
+
+    .hint { font-size: 17px; color: #7a6647; margin-top: 6px; line-height: 1.4; }
+    .err { font-size: 18px; color: #b8432e; margin-top: 8px; min-height: 24px; }
+    .err.ok { color: #3f6f2a; }
+
+    /* Kolom isian dipakai di dua formulir, jadi gayanya tidak lagi terikat ke
+       .newgame — kalau tidak, kolom "lanjutkan" jatuh ke gaya bawaan peramban
+       dan terlihat seperti tempelan dari halaman lain. */
+    .field { display: block; margin-bottom: 6px; font-size: 20px; }
+    .input { width: 100%; font: inherit; font-size: 24px; padding: 8px 12px;
+             border: 3px solid var(--outline); background: #fff; color: var(--outline); }
+    .input::placeholder { color: #b3a488; }
+    .input:focus { outline: 3px solid var(--red); outline-offset: 2px; }
+
+    .resume { border-top: 3px dashed var(--wood-light); margin-top: 26px; padding-top: 20px; }
+    .resume .row { display: flex; gap: 14px; align-items: stretch; flex-wrap: wrap; margin-top: 4px; }
+    .resume .row .input { flex: 1 1 240px; width: auto; }
+    .resume .row .btn { flex: 0 0 auto; }
+    form.newgame { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .avatars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .avatars label { border: 4px solid var(--outline); background: var(--cream-dark); padding: 8px; text-align: center; cursor: pointer; font-size: 17px; }
+    .avatars label img { width: 80px; height: 80px; display: block; margin: 0 auto 4px; image-rendering: pixelated; }
+    .avatars input { display: none; }
+    .avatars input:checked + label, .avatars label:has(input:checked) { background: #fff3d6; outline: 4px solid var(--red); }
+    .actions { grid-column: 1 / -1; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 24px; }
+    kbd { font-family: "Press Start 2P", monospace; font-size: 11px; background: var(--wood-light); color: var(--cream); border: 2px solid var(--outline); box-shadow: 0 2px 0 var(--wood-dark); padding: 4px 6px; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 20px; }
+    .card { border: 4px solid var(--outline); background: #fff8e8; padding: 14px; box-shadow: 0 5px 0 var(--wood-dark); }
+    .card img.portrait { width: 192px; height: 192px; display: block; margin: 0 auto 8px; }
+    .card .sprite { width: 32px; height: 48px; background: url("assets/sprites/characters/player_m/player_m_sheet.png") 0 0 no-repeat; margin: 0 auto 8px; transform: scale(2); transform-origin: top center; height: 96px; }
+    .card h3 { font-size: 12px; margin: 8px 0 6px; }
+    .card .role { color: var(--red); }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="brand pixel" href="#main">LEMBAH KENANGA</a>
+    <a class="tab" href="#main">Main</a>
+    <a class="tab" href="#cara-main">Cara Main</a>
+    <a class="tab" href="#karakter">Karakter</a>
+    <a class="tab" href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+  <section id="main">
+    <div class="hero">
+      <div class="title">
+        <img class="logo" src="assets/homepage/logo.png" alt="Lembah Kenanga">
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Mulai Petualangan</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <form class="newgame" id="newgame">
+        <div>
+          <label class="field" for="name">Username</label>
+          <input class="input" type="text" id="name" maxlength="16" value="" placeholder="mis. Iqbal21" autocomplete="off" required>
+          <div class="hint">Huruf dan angka saja, 3–16 karakter, tanpa spasi. Username ini yang kamu pakai untuk melanjutkan nanti.</div>
+          <label class="field" for="farm" style="margin-top:14px">Nama ladang</label>
+          <input class="input" type="text" id="farm" maxlength="18" value="Ladang Kenanga" required>
+        </div>
+        <div>
+          <label class="field">Pilih avatar</label>
+          <div class="avatars" id="avatars"></div>
+        </div>
+        <div class="actions">
+          <button class="btn" type="submit" id="startbtn">MULAI BARU</button>
+          <div class="err" id="newerr"></div>
+        </div>
+      </form>
+
+      <div class="resume">
+        <label class="field" for="resumename">Sudah pernah main? Masukkan username-mu</label>
+        <form class="row" id="resumeform">
+          <input class="input" type="text" id="resumename" maxlength="16" placeholder="username" autocomplete="off">
+          <button class="btn secondary" type="submit" id="resumebtn">LANJUTKAN</button>
+        </form>
+        <div class="err" id="resumeerr"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cara-main">
+    <div class="panel">
+      <h2>Kontrol</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <div class="keys">
+        <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / panah — berjalan</div>
+        <div><kbd>Shift</kbd> (tahan) — berlari</div>
+        <div><kbd>E</kbd> di tepi air — memancing (sambil memegang pancing)</div>
+        <div><kbd>E</kbd> / <kbd>Spasi</kbd> — pakai alat, bicara, panen, tidur</div>
+        <div><kbd>1</kbd>…<kbd>9</kbd>, <kbd>X</kbd>/<kbd>Z</kbd>, roda mouse — pilih alat</div>
+        <div><kbd>I</kbd> / <kbd>Tab</kbd> — inventori (panah pilih, <kbd>E</kbd> pindah, <kbd>Backspace</kbd> buang)</div>
+        <div><kbd>G</kbd> — beri hadiah ke warga yang kamu hadapi</div>
+        <div><kbd>C</kbd> — makan barang yang dipegang</div>
+        <div><kbd>Esc</kbd> — menu (Lanjut, Petunjuk, Pengaturan, Keluar)</div>
+        <div>Gelembung pojok kiri bawah — obrolan publik dengan pemain lain yang online</div>
+        <div><kbd>F</kbd> — ganti zoom (juga ada di Pengaturan)</div>
+        <div><kbd>N</kbd> / <kbd>T</kbd> — (uji coba) ganti musim / +1 jam</div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Ritme Hari</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <p>Hari dimulai pukul 06:00. Setiap aksi dengan alat memakai <b>energi</b>; makan memulihkannya. Berdiri di depan pintu rumah lalu tekan <kbd>E</kbd> untuk <b>tidur</b> sebelum pukul 02:00 — kalau lewat, kamu pingsan dan bangun dengan energi separuh. Tidur juga <b>menyimpan</b> permainanmu.</p>
+      <p><b>Papan pengumuman</b> di desa memberi tanggal, cuaca hari ini, dan ramalan besok.</p>
+      <p>Tidak ada layar pemuatan: semua tempat berada di satu peta, dan setiap bangunan dilayani langsung di depan pintunya.</p>
+      <p>Satu musim = 28 hari. Ada empat musim: <b>Semi, Panas, Gugur, Dingin</b>. Tanaman hanya tumbuh di musimnya; saat musim berganti, tanaman yang tidak cocok akan layu.</p>
+    </div>
+    <div class="panel">
+      <h2>Bertani</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <p><b>Cangkul</b> tanah → <b>tanam benih</b> → <b>siram</b> setiap hari → <b>panen</b>. Mencangkul dan menanam hanya bisa di dalam <b>petak kebun berpagar</b>. Isi ulang penyiram di sumur. Hasil panen dimasukkan ke <b>kotak jual</b> di dekat rumah dan dibayar keesokan paginya. Hujan menyiram semua tanaman untukmu.</p>
+      <p>Setiap tanaman hanya tumbuh di musimnya. Saat musim berganti, tanaman yang tidak cocok akan layu — jadi perhatikan kalender.</p>
+      <p>Kapak menebang pohon dan batang kayu (kayu), beliung memecah batu (batu), sabit membersihkan rumput liar (serat). Semak berbuah bisa dipetik jadi beri.</p>
+      <p>Beri makan ayam dan sapi di kandang; keesokan harinya mereka menghasilkan telur dan susu yang bisa kamu ambil.</p>
+    </div>
+    <div class="panel">
+      <h2>Belanja & Alat</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <p>Berdiri di depan pintu toko dan tekan <kbd>E</kbd> — menunya langsung terbuka, tanpa perlu masuk ke dalam.</p>
+      <p><b>Toko Bu Sari</b> (buka 09:00–17:00) menjual benih sesuai musim, pakan ternak, dan umpan. Kamu juga bisa menjual barang di sana lewat tab <b>JUAL</b>.</p>
+      <p><b>Pandai Besi</b> (buka 09:00–16:00) meningkatkan alatmu. Tingkat <b>Tembaga</b> butuh G500 + 5 batu dan menghemat 1 energi setiap ayunan; <b>Besi</b> butuh G2.000 + 5 bijih tembaga. Tekan <kbd>Tab</kbd> di layar pandai besi untuk memilih alat yang ingin ditingkatkan.</p>
+      <p>Warung Kopi dan Balai Desa menyusul.</p>
+    </div>
+    <div class="panel">
+      <h2>Tempat yang Bisa Dikunjungi</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <p>Seluruh lembah adalah <b>satu peta</b> — tidak ada layar pemuatan saat berpindah tempat.</p>
+      <p><b>Ladang</b> (utara-barat) — rumahmu, petak kebun berpagar, kandang ayam dan lumbung sapi, sumur, dan kotak jual.</p>
+      <p><b>Pusat Desa</b> (timur) — plaza batu dengan air mancur, Balai Desa berjam, toko Bu Sari, warung kopi, pandai besi, dan papan pengumuman.</p>
+      <p><b>Hutan</b> (barat daya) — pepohonan rapat, kolam berlili, dan pondok bunga Rani. Sumber kayu, batu, beri, jamur, dan bunga liar.</p>
+      <p><b>Distrik Selatan</b> — klinik Dokter Ratna dan tiga rumah warga yang menghadap satu jalan.</p>
+      <p><b>Pantai</b> (selatan) — pasir, pohon kelapa, kerang dan rumput laut untuk dipungut, pondok Nenek Wulan, serta dermaga kayu yang bisa kamu susuri sampai ke ujung.</p>
+      <p>Satu jalur utama turun dari jalan besar desa sampai ke dermaga, dan dua papan penunjuk berdiri di percabangannya — jadi kamu tidak perlu menebak arah.</p>
+      <p><b>Rumah</b> — tekan <kbd>E</kbd> di depan pintu untuk tidur.</p>
+      <p><b>Memancing</b> — sapa <b>Nenek Wulan</b> di pondok tepi pantai, dia akan memberimu pancingnya yang lama (kalau keburu penasaran, Bu Sari juga menjualnya G350). Lalu berdiri menghadap air dan tekan <kbd>E</kbd>. Tunggu pelampungnya tersentak, tekan <kbd>E</kbd> lagi untuk mengait, lalu tahan <kbd>E</kbd> untuk menjaga batang hijau tetap menutupi ikannya. Kolam hutan dan laut punya ikan yang berbeda, dan sebagian hanya muncul malam hari atau di musim tertentu. Lemparkan di dekat bayangan ikan yang lewat: sambarannya lebih cepat dan tangkapannya lebih bagus.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Warga Desa</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <p>Sapa warga sekali sehari untuk menambah hati sedikit demi sedikit. Pegang barang lalu tekan <kbd>G</kbd> di depan mereka untuk memberi hadiah — satu hadiah per orang per hari, dan barang kesukaannya bernilai jauh lebih besar. Setelah <b>empat hati</b>, mereka mulai bercerita hal yang tidak mereka ceritakan ke sembarang orang.</p>
+      <p>Warga punya jadwal harian. Bu Sari menjaga toko sampai sore lalu ke plaza, Bang Jaka dan Bayu mampir ke warung selepas kerja, Nenek Wulan turun ke dermaga saat pagi. Desa ini terlihat berbeda tergantung jam berapa kamu datang.</p>
+    </div>
+  </section>
+
+  <section id="karakter">
+    <div class="panel">
+      <h2>Warga Lembah Kenanga</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <div class="cards">
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/player_m.png" alt=""><h3>Arya</h3><div class="role">Bisa kamu pilih</div><p>Bertopi jerami dan berbaju kodok biru. Mewarisi ladang kakek dan pindah dari kota.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/player_f.png" alt=""><h3>Laras</h3><div class="role">Bisa kamu pilih</div><p>Bertopi jerami dan berbaju kodok abu. Mewarisi ladang kakek dan pindah dari kota.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/player_m2.png" alt=""><h3>Damar</h3><div class="role">Bisa kamu pilih</div><p>Berkacamata bulat dan berkemeja hijau, lengan tergulung. Mewarisi ladang kakek dan pindah dari kota.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/player_f2.png" alt=""><h3>Nadia</h3><div class="role">Bisa kamu pilih</div><p>Berkerudung krem dan bertunik marun. Mewarisi ladang kakek dan pindah dari kota.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_harun.png" alt=""><h3>Pak Lurah Harun</h3><div class="role">Kepala desa</div><p>Bijak dan hangat. Memberimu tugas pertama. Suka: kopi, labu.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_sari.png" alt=""><h3>Bu Sari</h3><div class="role">Toko kelontong</div><p>Menjual benih dan membeli hasil panen. Suka: stroberi, bunga.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_jaka.png" alt=""><h3>Bang Jaka</h3><div class="role">Pandai besi</div><p>Menempa di bengkelnya sepanjang hari dan meningkatkan alatmu. Suka: bijih, kopi.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_dadang.png" alt=""><h3>Kang Dadang</h3><div class="role">Pemilik warung</div><p>Menjaga warung kopi di ujung timur jalan besar. Suka: telur, cabai.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_ratna.png" alt=""><h3>Dokter Ratna</h3><div class="role">Klinik desa</div><p>Merawat warga di klinik distrik selatan. Suka: jamu, bunga liar.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_wulan.png" alt=""><h3>Nenek Wulan</h3><div class="role">Nelayan tua</div><p>Lima puluh tahun memancing di teluk ini. Tinggal di pondok tepi pantai. Suka: kerang, rumput laut.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_rani.png" alt=""><h3>Rani</h3><div class="role">Pembudidaya bunga</div><p>Tinggal di pondok tepi hutan, dekat kolam. Suka: bunga liar, madu.</p></div>
+        <div class="card"><img class="portrait" src="assets/sprites/portraits/npc_bayu.png" alt=""><h3>Bayu</h3><div class="role">Nelayan muda</div><p>Hampir selalu berdiri di ujung dermaga. Murid Nenek Wulan. Suka: ikan kakap, kopi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="panel">
+      <h2>Tentang Game</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <p><b>Lembah Kenanga</b> adalah game simulasi kehidupan desa berbasis web, terinspirasi Harvest Moon dan Stardew Valley, dengan nuansa desa Indonesia: balai desa, warung kopi, batik, dan warga yang ramah.</p>
+      <p>Game ini berjalan sepenuhnya di browser (HTML5 Canvas, tanpa plugin) dan menyimpan progres di perangkatmu.</p>
+    </div>
+    <div class="panel">
+      <h2>Catatan Teknis</h2><img class="rule" src="assets/homepage/orn_divider.png" alt="">
+      <p>Engine: JavaScript murni + Canvas 2D, tile 32 px, proyeksi oblique top-down. Aset gambar dibuat dengan bantuan AI (Higgsfield, Nano Banana Pro) lalu dinormalisasi manual dengan Python: chroma-key, slicing frame, kuantisasi palet, dan uji seam.</p>
+      <p>Versi: 0.7 — satu lembah utuh tanpa layar pemuatan; bertani penuh, ternak, cuaca, belanja & upgrade alat, umpan balik aksi, musik latar, dan menu jeda dengan pengaturan.</p>
+    </div>
+  </section>
+</main>
+
+<script type="module">
+  import { setNewGame, writeSave, writeProfile, AVATARS } from './src/core/save.js';
+  import { validate, check, register, resume, currentUsername } from './src/core/account.js';
+
+  const tabs = [...document.querySelectorAll('nav a.tab')];
+  const sections = [...document.querySelectorAll('main section')];
+  function route() {
+    const id = (location.hash || '#main').slice(1);
+    sections.forEach((s) => s.classList.toggle('active', s.id === id));
+    tabs.forEach((t) => t.classList.toggle('active', t.getAttribute('href') === '#' + id));
+    window.scrollTo({ top: 0 });
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  // Kartu avatar dibangun dari AVATARS supaya menambah karakter berikutnya
+  // tidak perlu menyentuh HTML di dua tempat.
+  document.getElementById('avatars').innerHTML = AVATARS.map((a, i) => `
+    <label><input type="radio" name="avatar" value="${a.id}"${i === 0 ? ' checked' : ''}>
+      <img src="assets/sprites/portraits/${a.id}.png" alt="">${a.label}</label>`).join('');
+
+  const nameEl = document.getElementById('name');
+  const newErr = document.getElementById('newerr');
+  const startBtn = document.getElementById('startbtn');
+  const resumeEl = document.getElementById('resumename');
+  const resumeErr = document.getElementById('resumeerr');
+  const resumeBtn = document.getElementById('resumebtn');
+
+  // Isi kolom lanjutkan dengan username terakhir di peramban ini, sekadar
+  // kenyamanan — bukan sesi yang tersimpan.
+  resumeEl.value = currentUsername() ?? '';
+
+  const say = (el, msg, good = false) => {
+    el.textContent = msg;
+    el.classList.toggle('ok', good);
+  };
+
+  // Cek ketersediaan sambil mengetik, supaya kesalahan ketahuan sebelum tombol
+  // ditekan. Diberi jeda agar tidak satu permintaan per huruf.
+  let checkTimer = 0;
+  nameEl.addEventListener('input', () => {
+    const u = nameEl.value.trim();
+    clearTimeout(checkTimer);
+    const err = validate(u);
+    if (err) { say(newErr, u ? err : ''); return; }
+    say(newErr, 'Memeriksa...');
+    checkTimer = setTimeout(async () => {
+      const r = await check(u);
+      say(newErr, r.available ? `"${u}" tersedia.` : r.reason, r.available);
+    }, 350);
+  });
+
+  document.getElementById('newgame').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = nameEl.value.trim();
+    const err = validate(username);
+    if (err) return say(newErr, err);
+
+    startBtn.disabled = true;
+    say(newErr, 'Mendaftarkan...');
+    const profile = {
+      name: username,
+      farmName: document.getElementById('farm').value.trim() || 'Ladang Kenanga',
+      avatar: document.querySelector('input[name=avatar]:checked').value,
+    };
+    const r = await register(username, profile);
+    startBtn.disabled = false;
+    if (!r.ok) return say(newErr, r.error ?? 'Gagal mendaftar.');
+
+    // Simpanan lama di peramban ini milik username lain; buang supaya tidak
+    // terbawa ke permainan yang baru.
+    localStorage.removeItem('lk_save_0');
+    localStorage.removeItem('lk_save_0.bak');
+    setNewGame(profile);
+    location.href = 'game.html';
+  });
+
+  document.getElementById('resumeform').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = resumeEl.value.trim();
+    const err = validate(username);
+    if (err) return say(resumeErr, err);
+
+    resumeBtn.disabled = true;
+    say(resumeErr, 'Mengambil simpanan...');
+    const r = await resume(username);
+    resumeBtn.disabled = false;
+    if (!r.ok) return say(resumeErr, r.error ?? 'Gagal melanjutkan.');
+
+    // Simpanan dari server ditulis ke localStorage lebih dulu, lalu game boot
+    // seperti biasa. Satu jalur muat, bukan dua.
+    if (r.save) writeSave(r.save, 0);
+    else { localStorage.removeItem('lk_save_0'); localStorage.removeItem('lk_save_0.bak'); }
+    writeProfile(r.profile ?? { name: r.username });
+    location.href = 'game.html';
+  });
+</script>
+</body>
+</html>

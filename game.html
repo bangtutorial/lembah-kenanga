@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lembah Kenanga — Main</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; height: 100%; background: #1a1410; overflow: hidden; }
+    body { display: flex; align-items: center; justify-content: center; font-family: "VT323", monospace; color: #f5e6c8; }
+    canvas { image-rendering: pixelated; image-rendering: crisp-edges; outline: none; display: block; }
+    #loading { position: absolute; font-size: 24px; letter-spacing: 1px; }
+    #home { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); font-size: 14px; color: #d9c39a; text-decoration: none; opacity: .6; }
+    #home:hover { opacity: 1; }
+    /* font warm-up so canvas measureText sees the loaded faces */
+    .warm { position: absolute; opacity: 0; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <span class="warm" style="font-family:'Press Start 2P'">.</span><span class="warm" style="font-family:'VT323'">.</span>
+  <div id="loading">Memuat…</div>
+  <canvas id="game" tabindex="0"></canvas>
+  <a id="home" href="index.html">← Homepage</a>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

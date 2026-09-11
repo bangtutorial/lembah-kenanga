@@ -1,0 +1,406 @@
+{
+  "hoe": {
+    "name": "Cangkul",
+    "sheet": "items_tools",
+    "i": 0,
+    "tool": "hoe",
+    "energy": 2,
+    "stack": 1
+  },
+  "watering_can": {
+    "name": "Penyiram",
+    "sheet": "items_tools",
+    "i": 1,
+    "tool": "water",
+    "energy": 2,
+    "stack": 1,
+    "capacity": 40
+  },
+  "axe": {
+    "name": "Kapak",
+    "sheet": "items_tools",
+    "i": 2,
+    "tool": "axe",
+    "energy": 4,
+    "stack": 1
+  },
+  "pickaxe": {
+    "name": "Beliung",
+    "sheet": "items_tools",
+    "i": 3,
+    "tool": "pickaxe",
+    "energy": 4,
+    "stack": 1
+  },
+  "scythe": {
+    "name": "Sabit",
+    "sheet": "items_tools",
+    "i": 4,
+    "tool": "scythe",
+    "energy": 1,
+    "stack": 1
+  },
+  "fishing_rod": {
+    "name": "Pancing",
+    "sheet": "items_tools",
+    "i": 5,
+    "tool": "fish",
+    "energy": 3,
+    "stack": 1,
+    "buy": 350
+  },
+  "wood": {
+    "name": "Kayu",
+    "sheet": "items_tools",
+    "i": 6,
+    "sell": 10
+  },
+  "stone": {
+    "name": "Batu",
+    "sheet": "items_tools",
+    "i": 7,
+    "sell": 5
+  },
+  "fiber": {
+    "name": "Serat",
+    "sheet": "items_tools",
+    "i": 8,
+    "sell": 3
+  },
+  "copper_ore": {
+    "name": "Bijih Tembaga",
+    "sheet": "items_tools",
+    "i": 9,
+    "sell": 25
+  },
+  "iron_ore": {
+    "name": "Bijih Besi",
+    "sheet": "items_tools",
+    "i": 10,
+    "sell": 50
+  },
+  "coal": {
+    "name": "Batubara",
+    "sheet": "items_tools",
+    "i": 11,
+    "sell": 30
+  },
+  "egg": {
+    "name": "Telur",
+    "sheet": "items_tools",
+    "i": 12,
+    "sell": 50,
+    "eat": 20
+  },
+  "milk": {
+    "name": "Susu",
+    "sheet": "items_tools",
+    "i": 13,
+    "sell": 125,
+    "eat": 30
+  },
+  "wool": {
+    "name": "Wol",
+    "sheet": "items_tools",
+    "i": 14,
+    "sell": 340
+  },
+  "feed": {
+    "name": "Pakan Ternak",
+    "sheet": "items_tools",
+    "i": 15,
+    "sell": 10,
+    "buy": 20
+  },
+  "turnip": {
+    "name": "Lobak",
+    "sheet": "items_crops",
+    "i": 0,
+    "sell": 35,
+    "eat": 15
+  },
+  "potato": {
+    "name": "Kentang",
+    "sheet": "items_crops",
+    "i": 1,
+    "sell": 80,
+    "eat": 25
+  },
+  "tomato": {
+    "name": "Tomat",
+    "sheet": "items_crops",
+    "i": 2,
+    "sell": 60,
+    "eat": 20
+  },
+  "chili": {
+    "name": "Cabai",
+    "sheet": "items_crops",
+    "i": 3,
+    "sell": 40,
+    "eat": 10
+  },
+  "strawberry": {
+    "name": "Stroberi",
+    "sheet": "items_crops",
+    "i": 4,
+    "sell": 120,
+    "eat": 30
+  },
+  "corn": {
+    "name": "Jagung",
+    "sheet": "items_crops",
+    "i": 5,
+    "sell": 50,
+    "eat": 25
+  },
+  "pumpkin": {
+    "name": "Labu",
+    "sheet": "items_crops",
+    "i": 6,
+    "sell": 320,
+    "eat": 40
+  },
+  "cabbage": {
+    "name": "Kubis",
+    "sheet": "items_crops",
+    "i": 7,
+    "sell": 160,
+    "eat": 35
+  },
+  "seed_turnip": {
+    "name": "Benih Lobak",
+    "sheet": "items_crops",
+    "i": 8,
+    "seed": "turnip",
+    "buy": 20,
+    "sell": 10
+  },
+  "seed_potato": {
+    "name": "Benih Kentang",
+    "sheet": "items_crops",
+    "i": 9,
+    "seed": "potato",
+    "buy": 50,
+    "sell": 25
+  },
+  "seed_tomato": {
+    "name": "Benih Tomat",
+    "sheet": "items_crops",
+    "i": 10,
+    "seed": "tomato",
+    "buy": 50,
+    "sell": 25
+  },
+  "seed_chili": {
+    "name": "Benih Cabai",
+    "sheet": "items_crops",
+    "i": 11,
+    "seed": "chili",
+    "buy": 40,
+    "sell": 20
+  },
+  "seed_strawberry": {
+    "name": "Benih Stroberi",
+    "sheet": "items_crops",
+    "i": 12,
+    "seed": "strawberry",
+    "buy": 100,
+    "sell": 50
+  },
+  "seed_corn": {
+    "name": "Benih Jagung",
+    "sheet": "items_crops",
+    "i": 13,
+    "seed": "corn",
+    "buy": 150,
+    "sell": 75
+  },
+  "seed_pumpkin": {
+    "name": "Benih Labu",
+    "sheet": "items_crops",
+    "i": 14,
+    "seed": "pumpkin",
+    "buy": 100,
+    "sell": 50
+  },
+  "seed_cabbage": {
+    "name": "Benih Kubis",
+    "sheet": "items_crops",
+    "i": 15,
+    "seed": "cabbage",
+    "buy": 120,
+    "sell": 60
+  },
+  "mushroom": {
+    "name": "Jamur",
+    "sheet": "items_forage_fish",
+    "i": 0,
+    "sell": 40,
+    "eat": 20
+  },
+  "berry": {
+    "name": "Beri",
+    "sheet": "items_forage_fish",
+    "i": 1,
+    "sell": 20,
+    "eat": 10
+  },
+  "wildflower": {
+    "name": "Bunga Liar",
+    "sheet": "items_forage_fish",
+    "i": 2,
+    "sell": 30
+  },
+  "seashell": {
+    "name": "Kerang",
+    "sheet": "items_forage_fish",
+    "i": 3,
+    "sell": 30
+  },
+  "seaweed": {
+    "name": "Rumput Laut",
+    "sheet": "items_forage_fish",
+    "i": 4,
+    "sell": 20,
+    "eat": 5
+  },
+  "driftwood": {
+    "name": "Kayu Apung",
+    "sheet": "items_forage_fish",
+    "i": 5,
+    "sell": 15
+  },
+  "honeycomb": {
+    "name": "Sarang Madu",
+    "sheet": "items_forage_fish",
+    "i": 6,
+    "sell": 100,
+    "eat": 25
+  },
+  "nest": {
+    "name": "Sarang",
+    "sheet": "items_forage_fish",
+    "i": 7,
+    "sell": 60
+  },
+  "fish_tilapia": {
+    "name": "Mujair",
+    "sheet": "items_forage_fish",
+    "i": 8,
+    "sell": 50,
+    "eat": 20
+  },
+  "fish_catfish": {
+    "name": "Lele",
+    "sheet": "items_forage_fish",
+    "i": 9,
+    "sell": 75,
+    "eat": 25
+  },
+  "fish_gourami": {
+    "name": "Gurame",
+    "sheet": "items_forage_fish",
+    "i": 10,
+    "sell": 90,
+    "eat": 30
+  },
+  "fish_snapper": {
+    "name": "Kakap",
+    "sheet": "items_forage_fish",
+    "i": 11,
+    "sell": 120,
+    "eat": 35
+  },
+  "fish_tuna": {
+    "name": "Tongkol",
+    "sheet": "items_forage_fish",
+    "i": 12,
+    "sell": 200,
+    "eat": 40
+  },
+  "squid": {
+    "name": "Cumi",
+    "sheet": "items_forage_fish",
+    "i": 13,
+    "sell": 150,
+    "eat": 30
+  },
+  "junk_boot": {
+    "name": "Sepatu Bekas",
+    "sheet": "items_forage_fish",
+    "i": 14,
+    "sell": 0
+  },
+  "bait": {
+    "name": "Umpan",
+    "sheet": "items_forage_fish",
+    "i": 15,
+    "sell": 2,
+    "buy": 5
+  },
+  "teh_manis": {
+    "name": "Teh Manis",
+    "sheet": "items_food_misc",
+    "i": 0,
+    "buy": 35,
+    "sell": 15,
+    "eat": 20
+  },
+  "kopi": {
+    "name": "Kopi",
+    "sheet": "items_food_misc",
+    "i": 1,
+    "buy": 60,
+    "sell": 30,
+    "eat": 30
+  },
+  "pisang_goreng": {
+    "name": "Pisang Goreng",
+    "sheet": "items_food_misc",
+    "i": 2,
+    "buy": 70,
+    "sell": 35,
+    "eat": 35
+  },
+  "jamu": {
+    "name": "Jamu",
+    "sheet": "items_food_misc",
+    "i": 3,
+    "buy": 90,
+    "sell": 45,
+    "eat": 40
+  },
+  "es_kelapa": {
+    "name": "Es Kelapa",
+    "sheet": "items_food_misc",
+    "i": 4,
+    "buy": 110,
+    "sell": 55,
+    "eat": 45
+  },
+  "nasi_goreng": {
+    "name": "Nasi Goreng",
+    "sheet": "items_food_misc",
+    "i": 5,
+    "buy": 180,
+    "sell": 90,
+    "eat": 70
+  },
+  "bakso": {
+    "name": "Bakso",
+    "sheet": "items_food_misc",
+    "i": 6,
+    "buy": 220,
+    "sell": 110,
+    "eat": 80
+  },
+  "soto_ayam": {
+    "name": "Soto Ayam",
+    "sheet": "items_food_misc",
+    "i": 7,
+    "buy": 260,
+    "sell": 130,
+    "eat": 95
+  }
+}

@@ -1,0 +1,7 @@
+# Normalkan akhir baris untuk teks, biarkan biner apa adanya
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ogg binary
+*.mp3 binary

@@ -1,0 +1,18 @@
+{
+  "turnip": {
+    "sprite": "crop_turnip", "seasons": ["spring"], "yields": "turnip",
+    "stageDays": [1, 1, 1, 1]
+  },
+  "potato": {
+    "sprite": "crop_potato", "seasons": ["spring"], "yields": "potato",
+    "stageDays": [1, 1, 2, 2]
+  },
+  "tomato": {
+    "sprite": "crop_tomato", "seasons": ["summer"], "yields": "tomato",
+    "stageDays": [2, 2, 3, 3], "regrowDays": 3
+  },
+  "chili": {
+    "sprite": "crop_chili", "seasons": ["summer"], "yields": "chili",
+    "stageDays": [1, 1, 1, 2], "regrowDays": 3
+  }
+}

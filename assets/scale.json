@@ -1,0 +1,1015 @@
+{
+  "_doc": {
+    "tile": 32,
+    "reference": "Karakter pemain = 32x48 px (1 x 1.5 tile) dan mewakili manusia dewasa ~1.7 m. Semua ukuran lain diturunkan dari itu, bukan dari bbox hasil generate.",
+    "anchor": "bottom-center kecuali disebut lain — kaki objek menempel di garis tile.",
+    "faces": "south = sprite digambar menghadap ke bawah layar; bangunan wajib punya jalan di baris tepat di bawah footprint-nya.",
+    "usage": "tools/check_scale.py membandingkan tabel ini dengan assets/manifest.json. Ubah tabel dulu, baru aset."
+  },
+  "player_m": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "player_f": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "npc_harun": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "npc_sari": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "chicken": {
+    "px": [
+      26,
+      24
+    ],
+    "tiles": [
+      0.8,
+      0.75
+    ],
+    "anchor": "bottom-center",
+    "faces": "west",
+    "note": "setinggi lutut manusia"
+  },
+  "dog": {
+    "px": [
+      34,
+      30
+    ],
+    "tiles": [
+      1.1,
+      0.95
+    ],
+    "anchor": "bottom-center",
+    "faces": "west",
+    "note": "sepinggang bawah manusia"
+  },
+  "cow": {
+    "px": [
+      60,
+      40
+    ],
+    "tiles": [
+      1.9,
+      1.25
+    ],
+    "anchor": "bottom-center",
+    "faces": "west",
+    "note": "jelas lebih besar dari anjing"
+  },
+  "house_lv1": {
+    "px": [
+      160,
+      160
+    ],
+    "tiles": [
+      5,
+      5
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      5,
+      2
+    ]
+  },
+  "coop": {
+    "px": [
+      128,
+      128
+    ],
+    "tiles": [
+      4,
+      4
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      4,
+      2
+    ]
+  },
+  "barn": {
+    "px": [
+      192,
+      160
+    ],
+    "tiles": [
+      6,
+      5
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      6,
+      2
+    ]
+  },
+  "town_hall": {
+    "px": [
+      224,
+      192
+    ],
+    "tiles": [
+      7,
+      6
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      7,
+      2
+    ]
+  },
+  "store": {
+    "px": [
+      192,
+      160
+    ],
+    "tiles": [
+      6,
+      5
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      6,
+      2
+    ]
+  },
+  "warung": {
+    "px": [
+      160,
+      128
+    ],
+    "tiles": [
+      5,
+      4
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      5,
+      2
+    ]
+  },
+  "blacksmith": {
+    "px": [
+      160,
+      160
+    ],
+    "tiles": [
+      5,
+      5
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      5,
+      2
+    ]
+  },
+  "well": {
+    "px": [
+      64,
+      64
+    ],
+    "tiles": [
+      2,
+      2
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      2,
+      1
+    ]
+  },
+  "shipping_bin": {
+    "px": [
+      64,
+      64
+    ],
+    "tiles": [
+      2,
+      2
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      2,
+      1
+    ]
+  },
+  "fountain": {
+    "px": [
+      128,
+      176
+    ],
+    "tiles": [
+      4,
+      5.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      4,
+      2
+    ],
+    "frames": 6,
+    "fps": 8,
+    "note": "pusat plaza; basin 4 tile, pancaran air menjulang ke atas"
+  },
+  "notice_board": {
+    "px": [
+      56,
+      56
+    ],
+    "tiles": [
+      1.75,
+      1.75
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      2,
+      1
+    ]
+  },
+  "street_lamp": {
+    "px": [
+      32,
+      80
+    ],
+    "tiles": [
+      1,
+      2.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      1,
+      1
+    ]
+  },
+  "oak": {
+    "px": [
+      80,
+      96
+    ],
+    "tiles": [
+      2.5,
+      3
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      1,
+      1
+    ]
+  },
+  "pine": {
+    "px": [
+      80,
+      112
+    ],
+    "tiles": [
+      2.5,
+      3.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      1,
+      1
+    ]
+  },
+  "bush": {
+    "px": [
+      40,
+      40
+    ],
+    "tiles": [
+      1.25,
+      1.25
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      1,
+      1
+    ]
+  },
+  "rocks": {
+    "px": [
+      64,
+      48
+    ],
+    "tiles": [
+      2,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      1,
+      1
+    ]
+  },
+  "weeds": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      0,
+      0
+    ]
+  },
+  "props": {
+    "px": [
+      48,
+      48
+    ],
+    "tiles": [
+      1.5,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      1,
+      1
+    ]
+  },
+  "bridge": {
+    "px": [
+      96,
+      64
+    ],
+    "tiles": [
+      3,
+      2
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "fence": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "bottom-center",
+    "faces": "tileset",
+    "note": "kolom: h, v, post, corner_tl, corner_tr, corner_bl, corner_br, gate"
+  },
+  "crop_turnip": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "crop_potato": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "crop_tomato": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "crop_chili": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "furniture": {
+    "px": [
+      64,
+      96
+    ],
+    "tiles": [
+      2,
+      3
+    ],
+    "anchor": "bottom-center",
+    "faces": "south"
+  },
+  "shop_props": {
+    "px": [
+      96,
+      80
+    ],
+    "tiles": [
+      3,
+      2.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "south"
+  },
+  "wall": {
+    "px": [
+      32,
+      64
+    ],
+    "tiles": [
+      1,
+      2
+    ],
+    "anchor": "bottom-center",
+    "faces": "south"
+  },
+  "grass_spring": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "dirt": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "tilled_dry": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "tilled_wet": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "sand": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "plaza": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "wood_floor": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "water": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "items_tools": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "center"
+  },
+  "items_crops": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "center"
+  },
+  "items_forage_fish": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "center"
+  },
+  "particles": {
+    "px": [
+      16,
+      16
+    ],
+    "tiles": [
+      0.5,
+      0.5
+    ],
+    "anchor": "center"
+  },
+  "npc_jaka": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "npc_dadang": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "npc_ratna": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "npc_wulan": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "npc_rani": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "npc_bayu": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "clinic": {
+    "px": [
+      192,
+      160
+    ],
+    "tiles": [
+      6,
+      5
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      6,
+      2
+    ]
+  },
+  "hut_rani": {
+    "px": [
+      128,
+      128
+    ],
+    "tiles": [
+      4,
+      4
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      4,
+      2
+    ]
+  },
+  "hut_wulan": {
+    "px": [
+      128,
+      128
+    ],
+    "tiles": [
+      4,
+      4
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      4,
+      2
+    ]
+  },
+  "houses_villager": {
+    "px": [
+      128,
+      128
+    ],
+    "tiles": [
+      4,
+      4
+    ],
+    "anchor": "bottom-center",
+    "faces": "south",
+    "footprint": [
+      4,
+      2
+    ]
+  },
+  "dock": {
+    "px": [
+      96,
+      160
+    ],
+    "tiles": [
+      3,
+      5
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "boat": {
+    "px": [
+      96,
+      64
+    ],
+    "tiles": [
+      3,
+      2
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "coconut": {
+    "px": [
+      80,
+      128
+    ],
+    "tiles": [
+      2.5,
+      4
+    ],
+    "anchor": "bottom-center",
+    "faces": "none",
+    "footprint": [
+      1,
+      1
+    ]
+  },
+  "flowers": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "mushrooms": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "lilypads": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "beach_items": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "bottom-center",
+    "faces": "none"
+  },
+  "fish_shadow": {
+    "px": [
+      32,
+      24
+    ],
+    "tiles": [
+      1,
+      0.75
+    ],
+    "anchor": "center",
+    "faces": "none"
+  },
+  "bobber": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "center",
+    "faces": "none"
+  },
+  "butterfly": {
+    "px": [
+      20,
+      20
+    ],
+    "tiles": [
+      0.625,
+      0.625
+    ],
+    "anchor": "center",
+    "faces": "none"
+  },
+  "bird": {
+    "px": [
+      26,
+      24
+    ],
+    "tiles": [
+      0.812,
+      0.75
+    ],
+    "anchor": "center",
+    "faces": "none"
+  },
+  "firefly": {
+    "px": [
+      20,
+      20
+    ],
+    "tiles": [
+      0.625,
+      0.625
+    ],
+    "anchor": "center",
+    "faces": "none"
+  },
+  "dragonfly": {
+    "px": [
+      30,
+      32
+    ],
+    "tiles": [
+      0.938,
+      1.0
+    ],
+    "anchor": "center",
+    "faces": "none"
+  },
+  "crab": {
+    "px": [
+      26,
+      22
+    ],
+    "tiles": [
+      0.812,
+      0.688
+    ],
+    "anchor": "center",
+    "faces": "none"
+  },
+  "player_m2": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "player_f2": {
+    "px": [
+      32,
+      48
+    ],
+    "tiles": [
+      1,
+      1.5
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir"
+  },
+  "garden_soil": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "grass_summer": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "grass_autumn": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "grass_winter": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "tile"
+  },
+  "items_food_misc": {
+    "px": [
+      32,
+      32
+    ],
+    "tiles": [
+      1,
+      1
+    ],
+    "anchor": "center"
+  }
+}

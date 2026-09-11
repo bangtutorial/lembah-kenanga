@@ -1,0 +1,1415 @@
+{
+  "version": 1,
+  "tile": 32,
+  "sprites": {
+    "player_m": {
+      "file": "sprites/characters/player_m/player_m_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "player_f": {
+      "file": "sprites/characters/player_f/player_f_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "npc_harun": {
+      "file": "sprites/characters/npc_harun/npc_harun_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "npc_sari": {
+      "file": "sprites/characters/npc_sari/npc_sari_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "portrait_player_m": {
+      "file": "sprites/portraits/player_m.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_player_f": {
+      "file": "sprites/portraits/player_f.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_npc_harun": {
+      "file": "sprites/portraits/npc_harun.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_npc_sari": {
+      "file": "sprites/portraits/npc_sari.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "house_lv1": {
+      "file": "sprites/buildings/house_lv1.png",
+      "frame": [
+        160,
+        160
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        5,
+        2
+      ],
+      "door_tile": [
+        2,
+        4
+      ],
+      "status": "approved"
+    },
+    "oak": {
+      "file": "sprites/nature/oak_seasons.png",
+      "frame": [
+        80,
+        96
+      ],
+      "cols": 4,
+      "rows": 1,
+      "cols_season": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        1,
+        1
+      ],
+      "status": "approved"
+    },
+    "grass_spring": {
+      "file": "sprites/terrain/grass_spring.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "dirt": {
+      "file": "sprites/terrain/dirt.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "tilled_dry": {
+      "file": "sprites/terrain/tilled_dry.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "tilled_wet": {
+      "file": "sprites/terrain/tilled_wet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "water": {
+      "file": "sprites/terrain/water.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "cols": 3,
+      "rows": 1,
+      "fps": 4,
+      "status": "approved"
+    },
+    "fence": {
+      "file": "sprites/nature/fence/fence_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 8,
+      "rows": 1,
+      "pieces": [
+        "h",
+        "v",
+        "post",
+        "corner_tl",
+        "corner_tr",
+        "corner_bl",
+        "corner_br",
+        "gate"
+      ],
+      "pivot": "bottom-center",
+      "note": "disusun ulang dari raw oleh tools/build_fence.py agar menyambung antar tile",
+      "status": "approved"
+    },
+    "crop_turnip": {
+      "file": "sprites/crops/turnip/turnip_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 5,
+      "rows": 1,
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "crop_potato": {
+      "file": "sprites/crops/potato/potato_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 5,
+      "rows": 1,
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "crop_tomato": {
+      "file": "sprites/crops/tomato/tomato_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 5,
+      "rows": 1,
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "crop_chili": {
+      "file": "sprites/crops/chili/chili_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 5,
+      "rows": 1,
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "items_tools": {
+      "file": "sprites/items/items_tools/items_tools_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "center",
+      "status": "approved",
+      "ids": [
+        "hoe",
+        "watering_can",
+        "axe",
+        "pickaxe",
+        "scythe",
+        "fishing_rod",
+        "wood",
+        "stone",
+        "fiber",
+        "copper_ore",
+        "iron_ore",
+        "coal",
+        "egg",
+        "milk",
+        "wool",
+        "feed"
+      ]
+    },
+    "items_crops": {
+      "file": "sprites/items/items_crops/items_crops_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "center",
+      "status": "approved",
+      "ids": [
+        "turnip",
+        "potato",
+        "tomato",
+        "chili",
+        "strawberry",
+        "corn",
+        "pumpkin",
+        "cabbage",
+        "seed_turnip",
+        "seed_potato",
+        "seed_tomato",
+        "seed_chili",
+        "seed_strawberry",
+        "seed_corn",
+        "seed_pumpkin",
+        "seed_cabbage"
+      ]
+    },
+    "items_forage_fish": {
+      "file": "sprites/items/items_forage_fish/items_forage_fish_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "center",
+      "status": "approved",
+      "ids": [
+        "mushroom",
+        "berry",
+        "wildflower",
+        "seashell",
+        "seaweed",
+        "driftwood",
+        "honeycomb",
+        "nest",
+        "fish_tilapia",
+        "fish_catfish",
+        "fish_gourami",
+        "fish_snapper",
+        "fish_tuna",
+        "squid",
+        "junk_boot",
+        "bait"
+      ]
+    },
+    "coop": {
+      "file": "sprites/buildings/coop.png",
+      "frame": [
+        128,
+        128
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        4,
+        2
+      ],
+      "status": "approved"
+    },
+    "barn": {
+      "file": "sprites/buildings/barn.png",
+      "frame": [
+        192,
+        160
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        6,
+        2
+      ],
+      "status": "approved"
+    },
+    "well": {
+      "file": "sprites/buildings/well.png",
+      "frame": [
+        64,
+        64
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        2,
+        1
+      ],
+      "status": "approved"
+    },
+    "shipping_bin": {
+      "file": "sprites/buildings/shipping_bin.png",
+      "frame": [
+        64,
+        64
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        2,
+        1
+      ],
+      "status": "approved"
+    },
+    "rocks": {
+      "file": "sprites/nature/rocks/rocks_sheet.png",
+      "frame": [
+        64,
+        48
+      ],
+      "cols": 3,
+      "rows": 1,
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "bush": {
+      "file": "sprites/nature/bush/bush_sheet.png",
+      "frame": [
+        40,
+        40
+      ],
+      "cols": 3,
+      "rows": 1,
+      "variants": [
+        "green",
+        "berry",
+        "winter"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "weeds": {
+      "file": "sprites/nature/weeds/weeds_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 4,
+      "rows": 1,
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "props": {
+      "file": "sprites/nature/props/props_sheet.png",
+      "frame": [
+        48,
+        48
+      ],
+      "cols": 4,
+      "rows": 1,
+      "ids": [
+        "mailbox",
+        "signpost",
+        "stump",
+        "log"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "ui_panel": {
+      "file": "sprites/ui/panel.png",
+      "frame": [
+        96,
+        96
+      ],
+      "nine_slice": 16,
+      "status": "approved"
+    },
+    "ui_buttons": {
+      "file": "sprites/ui/buttons/buttons_sheet.png",
+      "frame": [
+        96,
+        32
+      ],
+      "cols": 3,
+      "rows": 1,
+      "states": [
+        "normal",
+        "hover",
+        "pressed"
+      ],
+      "status": "approved"
+    },
+    "ui_slots": {
+      "file": "sprites/ui/slots/slots_sheet.png",
+      "frame": [
+        40,
+        40
+      ],
+      "cols": 3,
+      "rows": 1,
+      "states": [
+        "empty",
+        "selected",
+        "locked"
+      ],
+      "status": "approved"
+    },
+    "ui_icons_ws": {
+      "file": "sprites/ui/icons_ws/icons_ws_sheet.png",
+      "frame": [
+        24,
+        24
+      ],
+      "cols": 8,
+      "rows": 1,
+      "ids": [
+        "sunny",
+        "rain",
+        "snow",
+        "wind",
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
+      "status": "approved"
+    },
+    "town_hall": {
+      "file": "sprites/buildings/town_hall.png",
+      "frame": [
+        224,
+        192
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        7,
+        2
+      ],
+      "status": "approved"
+    },
+    "store": {
+      "file": "sprites/buildings/store.png",
+      "frame": [
+        192,
+        160
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        6,
+        2
+      ],
+      "status": "approved"
+    },
+    "warung": {
+      "file": "sprites/buildings/warung.png",
+      "frame": [
+        160,
+        128
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        5,
+        2
+      ],
+      "status": "approved"
+    },
+    "blacksmith": {
+      "file": "sprites/buildings/blacksmith.png",
+      "frame": [
+        160,
+        160
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        5,
+        2
+      ],
+      "status": "approved"
+    },
+    "pine": {
+      "file": "sprites/nature/pine.png",
+      "frame": [
+        80,
+        112
+      ],
+      "cols": 2,
+      "rows": 1,
+      "cols_variant": [
+        "summer",
+        "winter"
+      ],
+      "pivot": "bottom-center",
+      "footprint_tiles": [
+        1,
+        1
+      ],
+      "status": "approved"
+    },
+    "bridge": {
+      "file": "sprites/nature/bridge.png",
+      "frame": [
+        96,
+        64
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "chicken": {
+      "file": "sprites/animals/chicken/chicken_sheet.png",
+      "frame": [
+        26,
+        24
+      ],
+      "cols": 8,
+      "rows": 1,
+      "frames": [
+        "idle1",
+        "idle2",
+        "walk1",
+        "walk2",
+        "walk3",
+        "walk4",
+        "action1",
+        "action2"
+      ],
+      "facing": "left",
+      "pivot": "bottom-center",
+      "fps": 8,
+      "status": "approved"
+    },
+    "cow": {
+      "file": "sprites/animals/cow/cow_sheet.png",
+      "frame": [
+        60,
+        40
+      ],
+      "cols": 8,
+      "rows": 1,
+      "frames": [
+        "idle1",
+        "idle2",
+        "walk1",
+        "walk2",
+        "walk3",
+        "walk4",
+        "action1",
+        "action2"
+      ],
+      "facing": "left",
+      "pivot": "bottom-center",
+      "fps": 5,
+      "status": "approved"
+    },
+    "dog": {
+      "file": "sprites/animals/dog/dog_sheet.png",
+      "frame": [
+        34,
+        30
+      ],
+      "cols": 8,
+      "rows": 1,
+      "frames": [
+        "idle1",
+        "idle2",
+        "walk1",
+        "walk2",
+        "walk3",
+        "walk4",
+        "action1",
+        "action2"
+      ],
+      "facing": "left",
+      "pivot": "bottom-center",
+      "fps": 8,
+      "status": "approved"
+    },
+    "sand": {
+      "file": "sprites/terrain/sand.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "plaza": {
+      "file": "sprites/terrain/plaza.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "wood_floor": {
+      "file": "sprites/terrain/wood_floor.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "wall": {
+      "file": "sprites/terrain/wall.png",
+      "frame": [
+        32,
+        64
+      ],
+      "tile_x": true,
+      "status": "approved"
+    },
+    "furniture": {
+      "file": "sprites/interior/furniture/furniture_sheet.png",
+      "frame": [
+        64,
+        96
+      ],
+      "cols": 4,
+      "rows": 2,
+      "ids": [
+        "bed",
+        "table",
+        "chair",
+        "wardrobe",
+        "tv",
+        "rug",
+        "lamp",
+        "chest"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "shop_props": {
+      "file": "sprites/interior/shop_props/shop_props_sheet.png",
+      "frame": [
+        96,
+        80
+      ],
+      "cols": 4,
+      "rows": 1,
+      "ids": [
+        "counter",
+        "shelf",
+        "forge",
+        "clinic_bed"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "particles": {
+      "file": "sprites/fx/particles/particles_sheet.png",
+      "frame": [
+        16,
+        16
+      ],
+      "cols": 8,
+      "rows": 1,
+      "ids": [
+        "rain",
+        "splash",
+        "snow_big",
+        "snow_small",
+        "leaf_a",
+        "leaf_b",
+        "sparkle_big",
+        "sparkle_small"
+      ],
+      "pivot": "center",
+      "status": "approved"
+    },
+    "ui_coin": {
+      "file": "sprites/ui/ui_coin.png",
+      "frame": [
+        24,
+        24
+      ],
+      "status": "approved"
+    },
+    "ui_heart": {
+      "file": "sprites/ui/ui_heart.png",
+      "frame": [
+        20,
+        20
+      ],
+      "status": "approved"
+    },
+    "ui_arrow": {
+      "file": "sprites/ui/ui_arrow.png",
+      "frame": [
+        24,
+        24
+      ],
+      "status": "approved"
+    },
+    "notice_board": {
+      "file": "sprites/buildings/notice_board.png",
+      "frame": [
+        56,
+        56
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "fountain": {
+      "file": "sprites/buildings/fountain.png",
+      "frame": [
+        128,
+        176
+      ],
+      "cols": 6,
+      "rows": 1,
+      "fps": 8,
+      "pivot": "bottom-center",
+      "animated": true,
+      "status": "approved"
+    },
+    "street_lamp": {
+      "file": "sprites/buildings/street_lamp.png",
+      "frame": [
+        32,
+        80
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "npc_jaka": {
+      "file": "sprites/characters/npc_jaka/npc_jaka_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "npc_dadang": {
+      "file": "sprites/characters/npc_dadang/npc_dadang_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "npc_ratna": {
+      "file": "sprites/characters/npc_ratna/npc_ratna_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "npc_wulan": {
+      "file": "sprites/characters/npc_wulan/npc_wulan_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "npc_rani": {
+      "file": "sprites/characters/npc_rani/npc_rani_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "npc_bayu": {
+      "file": "sprites/characters/npc_bayu/npc_bayu_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "portrait_npc_jaka": {
+      "file": "sprites/portraits/npc_jaka.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_npc_dadang": {
+      "file": "sprites/portraits/npc_dadang.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_npc_ratna": {
+      "file": "sprites/portraits/npc_ratna.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_npc_wulan": {
+      "file": "sprites/portraits/npc_wulan.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_npc_rani": {
+      "file": "sprites/portraits/npc_rani.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "portrait_npc_bayu": {
+      "file": "sprites/portraits/npc_bayu.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "clinic": {
+      "file": "sprites/buildings/clinic.png",
+      "frame": [
+        192,
+        160
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "hut_rani": {
+      "file": "sprites/buildings/hut_rani.png",
+      "frame": [
+        128,
+        128
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "hut_wulan": {
+      "file": "sprites/buildings/hut_wulan.png",
+      "frame": [
+        128,
+        128
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "houses_villager": {
+      "file": "sprites/buildings/houses_villager/houses_villager_sheet.png",
+      "frame": [
+        128,
+        128
+      ],
+      "cols": 3,
+      "rows": 1,
+      "ids": [
+        "cream",
+        "timber",
+        "yellow"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "dock": {
+      "file": "sprites/buildings/dock.png",
+      "frame": [
+        96,
+        160
+      ],
+      "pivot": "bottom-center",
+      "decal": true,
+      "status": "approved"
+    },
+    "boat": {
+      "file": "sprites/buildings/boat.png",
+      "frame": [
+        96,
+        64
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "coconut": {
+      "file": "sprites/nature/coconut.png",
+      "frame": [
+        80,
+        128
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "flowers": {
+      "file": "sprites/nature/flowers/flowers_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 4,
+      "rows": 1,
+      "ids": [
+        "daisy",
+        "bellflower",
+        "marigold",
+        "cosmos"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "mushrooms": {
+      "file": "sprites/nature/mushrooms/mushrooms_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 3,
+      "rows": 1,
+      "ids": [
+        "toadstool",
+        "honey",
+        "porcini"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "lilypads": {
+      "file": "sprites/nature/lilypads/lilypads_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 3,
+      "rows": 1,
+      "ids": [
+        "pads",
+        "lotus",
+        "bud"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "beach_items": {
+      "file": "sprites/nature/beach_items/beach_items_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 4,
+      "rows": 1,
+      "ids": [
+        "conch",
+        "scallop",
+        "starfish",
+        "seaweed"
+      ],
+      "pivot": "bottom-center",
+      "status": "approved"
+    },
+    "fish_shadow": {
+      "file": "sprites/fx/fish_shadow/fish_shadow_sheet.png",
+      "frame": [
+        32,
+        24
+      ],
+      "cols": 3,
+      "rows": 1,
+      "fps": 4,
+      "pivot": "center",
+      "status": "approved"
+    },
+    "bobber": {
+      "file": "sprites/fx/bobber/bobber_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 3,
+      "rows": 1,
+      "ids": [
+        "calm",
+        "dip",
+        "splash"
+      ],
+      "pivot": "center",
+      "status": "approved"
+    },
+    "ui_fishing_track": {
+      "file": "sprites/ui/fishing_track.png",
+      "frame": [
+        28,
+        176
+      ],
+      "status": "approved"
+    },
+    "ui_fishing_zone": {
+      "file": "sprites/ui/fishing_zone.png",
+      "frame": [
+        28,
+        44
+      ],
+      "status": "approved"
+    },
+    "ui_fishing_fill": {
+      "file": "sprites/ui/fishing_fill.png",
+      "frame": [
+        16,
+        160
+      ],
+      "status": "approved"
+    },
+    "ui_chat_icons": {
+      "file": "sprites/ui/chat_icons/chat_icons_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 3,
+      "rows": 1,
+      "ids": [
+        "bubble",
+        "bubble_unread",
+        "people"
+      ],
+      "status": "approved"
+    },
+    "butterfly": {
+      "file": "sprites/animals/butterfly/butterfly_sheet.png",
+      "frame": [
+        20,
+        20
+      ],
+      "cols": 4,
+      "rows": 1,
+      "fps": 9,
+      "pivot": "center",
+      "status": "approved"
+    },
+    "bird": {
+      "file": "sprites/animals/bird/bird_sheet.png",
+      "frame": [
+        26,
+        24
+      ],
+      "cols": 4,
+      "rows": 1,
+      "fps": 6,
+      "pivot": "center",
+      "status": "approved"
+    },
+    "firefly": {
+      "file": "sprites/animals/firefly/firefly_sheet.png",
+      "frame": [
+        20,
+        20
+      ],
+      "cols": 3,
+      "rows": 1,
+      "fps": 3,
+      "pivot": "center",
+      "status": "approved"
+    },
+    "dragonfly": {
+      "file": "sprites/animals/dragonfly/dragonfly_sheet.png",
+      "frame": [
+        30,
+        32
+      ],
+      "cols": 3,
+      "rows": 1,
+      "fps": 12,
+      "pivot": "center",
+      "status": "approved"
+    },
+    "crab": {
+      "file": "sprites/animals/crab/crab_sheet.png",
+      "frame": [
+        26,
+        22
+      ],
+      "cols": 3,
+      "rows": 1,
+      "fps": 5,
+      "pivot": "center",
+      "status": "approved"
+    },
+    "player_m2": {
+      "file": "sprites/characters/player_m2/player_m2_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "portrait_player_m2": {
+      "file": "sprites/portraits/player_m2.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "player_f2": {
+      "file": "sprites/characters/player_f2/player_f2_sheet.png",
+      "frame": [
+        32,
+        48
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "rows_dir": [
+        "down",
+        "left",
+        "right",
+        "up"
+      ],
+      "idle_col": 0,
+      "walk_cols": [
+        1,
+        2,
+        3
+      ],
+      "walk_fps": 8,
+      "status": "approved"
+    },
+    "portrait_player_f2": {
+      "file": "sprites/portraits/player_f2.png",
+      "frame": [
+        96,
+        96
+      ],
+      "status": "approved"
+    },
+    "garden_soil": {
+      "file": "sprites/terrain/garden_soil.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "grass_summer": {
+      "file": "sprites/terrain/grass_summer.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "grass_autumn": {
+      "file": "sprites/terrain/grass_autumn.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "grass_winter": {
+      "file": "sprites/terrain/grass_winter.png",
+      "frame": [
+        32,
+        32
+      ],
+      "tile": true,
+      "status": "approved"
+    },
+    "items_food_misc": {
+      "file": "sprites/items/items_food_misc/items_food_misc_sheet.png",
+      "frame": [
+        32,
+        32
+      ],
+      "cols": 4,
+      "rows": 2,
+      "pivot": "center",
+      "status": "approved",
+      "ids": [
+        "teh_manis",
+        "kopi",
+        "pisang_goreng",
+        "jamu",
+        "es_kelapa",
+        "nasi_goreng",
+        "bakso",
+        "soto_ayam"
+      ]
+    }
+  }
+}
