@@ -337,6 +337,7 @@ function dayNumber() {
 
 /** Serahkan barang yang sedang dipegang ke warga yang dihadapi. */
 function giveGift(npc) {
+  if (npc.beast) { showToast(`${npc.name} cuma menatapmu.`); state.audio.denied(); return; }
   const held = state.inv.held;
   const def = held && itemDef(held.id);
   if (!def) { showToast('Pegang dulu barang yang mau diberikan.'); state.audio.denied(); return; }
@@ -434,7 +435,7 @@ function interactTarget() {
   for (const n of state.npcs) {
     if (!inFront(n, 44)) continue;
     const held = state.inv.held;
-    const canGift = held && !itemDef(held.id)?.tool;
+    const canGift = !n.beast && held && !itemDef(held.id)?.tool;
     return { kind: 'npc', npc: n, label: canGift ? `Bicara · G beri hadiah` : `Bicara dengan ${n.name}` };
   }
   for (const a of state.animals) {
@@ -610,12 +611,14 @@ function doInteract() {
       // have to remember in the save file.
       const gift = t.npc.gift;
       const owed = gift && inv.count(gift.item) === 0;
-      state.social.talk(t.npc.id, dayNumber());
+      // Yang bukan warga tidak punya hati dan tidak menambah persahabatan —
+      // barisan hati di atas kepala seekor harimau hanya akan membingungkan.
+      if (!t.npc.beast) state.social.talk(t.npc.id, dayNumber());
       dialog.open({
         speaker: t.npc.name,
         portrait: t.npc.portrait,
         text: owed ? gift.text : t.npc.pickDialog(state.time, state.social.hearts(t.npc.id)),
-        hearts: { filled: state.social.hearts(t.npc.id), max: MAX_HEARTS },
+        hearts: t.npc.beast ? null : { filled: state.social.hearts(t.npc.id), max: MAX_HEARTS },
       });
       dialog.onClose = () => {
         t.npc.talking = false;
@@ -847,7 +850,7 @@ function applySchedules() {
   const hour = state.time.hour24;
   const cam = state.camera;
   for (const npc of state.npcs) {
-    if (!npc.schedule?.length) continue;
+    if (npc.beast || !npc.schedule?.length) continue;
     let entry = npc.schedule[npc.schedule.length - 1];
     for (const e of npc.schedule) if (hour >= e.h) entry = e;
     if (entry.at === npc.place) continue;

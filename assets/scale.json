@@ -1011,5 +1011,18 @@
       1
     ],
     "anchor": "center"
+  },
+  "npc_maung": {
+    "px": [
+      56,
+      40
+    ],
+    "tiles": [
+      1.75,
+      1.25
+    ],
+    "anchor": "bottom-center",
+    "faces": "4-dir",
+    "note": "sedikit lebih pendek dari sapi, tapi lebih panjang badannya"
   }
 }

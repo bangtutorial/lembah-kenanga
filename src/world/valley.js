@@ -372,6 +372,9 @@ export function buildValley() {
     rani: { c: map.raniDoor.c + 2, r: map.raniDoor.r + 1 },
     wulan: { c: map.wulanDoor.c - 2, r: map.wulanDoor.r + 1 },
     bayu: { c: dock.c, r: dock.r0 + 1 },        // on the jetty itself; the sea pens him in
+    // Hutan di utara Balai Desa: 120 dari 135 petaknya bisa dilalui, jadi ia
+    // punya ruang berkeliling tanpa tersangkut di sela pohon.
+    maung: { c: plazaCx + 1, r: map.townHallDoor.r - 6 },
   };
   // Tempat yang bisa disebut namanya oleh jadwal NPC di `npcs.json`. Menaruh
   // koordinat di berkas data akan membuat setiap penggeseran bangunan

@@ -406,5 +406,19 @@
       "squid",
       "driftwood"
     ]
+  },
+  {
+    "id": "maung",
+    "name": "Maung",
+    "sprite": "npc_maung",
+    "portrait": null,
+    "role": "Penunggu hutan belakang Balai Desa",
+    "beast": true,
+    "roam": 6,
+    "dialogs": {
+      "default": [
+        "Raawwrrr"
+      ]
+    }
   }
 ]

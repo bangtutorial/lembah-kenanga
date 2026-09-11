@@ -12,9 +12,13 @@ export class Npc extends Character {
     this.gift = data.gift ?? null;   // starting tool handed over on first meeting
     this.schedule = data.schedule ?? null;
     this.place = null;               // nama tempat yang sedang dituju
-    this.speed = 48;
+    this.beast = !!data.beast;       // bukan warga: tanpa hati, hadiah, atau jadwal
+    this.speed = data.beast ? 34 : 48;
     this.anchor = { x, y };
-    this.wanderRadius = 3 * TILE;
+    // Tiga tile cukup untuk warga yang menunggui tokonya. Yang berkeliling
+    // hutan butuh lebih luas, kalau tidak ia terlihat mondar-mandir di satu
+    // titik saja.
+    this.wanderRadius = (data.roam ?? 3) * TILE;
     this.target = null;
     this.wait = 1 + Math.random() * 3;
     this.talking = false;

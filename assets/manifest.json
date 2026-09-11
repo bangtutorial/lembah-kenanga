@@ -1410,6 +1410,17 @@
         "bakso",
         "soto_ayam"
       ]
+    },
+    "npc_maung": {
+      "file": "sprites/characters/npc_maung/npc_maung_sheet.png",
+      "frame": [
+        56,
+        40
+      ],
+      "cols": 4,
+      "rows": 4,
+      "pivot": "bottom-center",
+      "status": "approved"
     }
   }
 }
